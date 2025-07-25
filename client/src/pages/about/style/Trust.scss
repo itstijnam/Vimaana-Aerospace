@@ -1,0 +1,126 @@
+
+.trust-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.trust-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.466);
+    }
+}
+
+.trust-content {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.trust-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 6% 4rem;
+    color: white;
+    text-align: center;
+    
+    h2 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    
+    p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 3rem;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+}
+
+.trust-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    
+    .stat-item {
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+        transition: transform 0.3s ease, background 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+    
+    .stat-number {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #4a6bff;
+        margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+}
+
+@media (max-width: 768px) {
+    .trust-container {
+        padding: 6rem 4% 3rem;
+        
+        h2 {
+            font-size: 2.2rem;
+        }
+        
+        p {
+            font-size: 1rem;
+        }
+    }
+    
+    .trust-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        
+        .stat-item {
+            padding: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+        }
+    }
+}

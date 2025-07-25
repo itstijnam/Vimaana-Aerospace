@@ -1,0 +1,205 @@
+@mixin flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Team {
+  background: rgba(0, 0, 0, 0.479);
+  color: white;
+  padding: 4rem 1rem; // Added horizontal padding
+  width: 100%;
+  overflow: hidden; // Removed scroll
+}
+
+.team_heading{
+  @include flexcenter;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+
+  span{
+    color: #fffb20;
+    font-family: "Bitcount Grid Single", system-ui;
+    text-shadow:
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+      -1px  1px 0 #000,
+       1px  1px 0 #000; 
+  }
+  
+}
+
+.team_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; // Added wrap
+  gap: 2rem;
+  max-width: 1400px; // Added max-width for better control
+  margin: 0 auto; // Center the container
+}
+
+.team_info {
+  position: relative;
+  width: 13rem; // Base size
+  height: 25rem; // Base size
+  overflow: hidden;
+  display: flex;
+  
+  // Responsive scaling - now based on container width
+  @media (max-width: 1400px) {
+    width: 12rem;
+    height: 23rem;
+  }
+  
+  @media (max-width: 1200px) {
+    width: 11rem;
+    height: 21rem;
+  }
+  
+  @media (max-width: 992px) {
+    width: 10rem;
+    height: 19rem;
+  }
+  
+  @media (max-width: 768px) {
+    width: 9rem;
+    height: 17rem;
+  }
+  
+  @media (max-width: 576px) {
+    width: 8rem;
+    height: 15rem;
+  }
+
+  // For very small screens, show 2 per row
+  @media (max-width: 480px) {
+    width: calc(50% - 1rem); // 50% width minus gap
+    height: 18rem;
+  }
+
+  .team_image {
+    @include flexcenter;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.4s ease;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.3) 50%,
+        rgba(0, 0, 0, 0.7) 100%);
+      transition: all 0.4s ease;
+      z-index: 1;
+    }
+
+    &:hover {
+      &::before {
+        left: 0;
+      }
+      
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .team_tag,
+  .team_position {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: bold;
+    padding: 0.5rem;
+    z-index: 2;
+    
+    // Responsive adjustments
+    @media (max-width: 768px) {
+      padding: 0.3rem;
+    }
+  }
+
+  .team_tag {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+
+    .team_text {
+      font-size: 1.6rem;
+      font-family: sans-serif;
+      font-weight: 200;
+      
+      @media (max-width: 1200px) {
+        font-size: 1.4rem;
+      }
+      
+      @media (max-width: 992px) {
+        font-size: 1.2rem;
+      }
+      
+      @media (max-width: 768px) {
+        font-size: 1.1rem;
+      }
+      
+      @media (max-width: 576px) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .team_position {
+    right: 0;
+    top: 50%;
+    transform: translateY(-70%) rotate(180deg);
+    height: 100%;
+
+    .team_post_text {
+      font-size: 1.5rem;
+      font-family: sans-serif;
+      font-weight: 200;
+      
+      @media (max-width: 1200px) {
+        font-size: 1.3rem;
+      }
+      
+      @media (max-width: 992px) {
+        font-size: 1.1rem;
+      }
+      
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+      
+      @media (max-width: 576px) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  &:hover {
+    .team_tag,
+    .team_position {
+      opacity: 1;
+    }
+  }
+}

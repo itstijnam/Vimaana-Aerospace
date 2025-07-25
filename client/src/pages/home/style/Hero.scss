@@ -1,0 +1,33 @@
+.hero-section {
+  position: relative; // very important for absolute positioning
+  padding: 2rem;
+  background-color: #fdebd0; // Optional: Your beige background color
+  min-height: 100vh;
+
+  .Hero-heading{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+
+
+    h1, p{
+      font-family: 'Inter', sans-serif;
+      text-align: start;
+      font-weight: 545;
+      justify-content: center;
+      align-items: center;
+      font-size: 8rem;
+      color: rgb(58, 50, 25);
+    }
+  }
+
+}
+
+.hero-img-top-right {
+  position: absolute;
+  left: 50rem;
+  width: 70rem; // Adjust as needed
+  height: 50rem;
+  // z-index: 10;
+  // border: black solid 2px;
+}
