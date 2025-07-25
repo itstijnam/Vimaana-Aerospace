@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Layout from './pages/Layout';
 import About from './pages/about/About';
+import Shop from './pages/shop/Shop';
 // import PricingPlans from './pages/pricing/PricingPage';
 
 
@@ -18,6 +19,10 @@ const browserRouter = createBrowserRouter([
       {
         path: 'about',
         element: <About/>
+      },
+      {
+        path: 'shop',
+        element: <Shop/>
       },
       // {
       //   path: 'pricing',

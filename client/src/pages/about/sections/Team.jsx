@@ -13,28 +13,18 @@ function Team() {
         {
             tag: 'Co-Founder',
             teamImage: SUBODH,
-            post: 'UI/UX Designer'
+            post: 'Flight Engineer'
         },
         {
             tag: 'Co-Founder',
-            teamImage: VEDANT,
-            post: 'Senior Developer'
-        },
-        {
-            tag: 'Founder',
-            teamImage: MANJIT,
-            post: 'Full-Stack Developer'
+            teamImage: SUBODH,
+            post: 'Controller'
         },
         {
             tag: 'Co-Founder',
-            teamImage: MOHIT,
-            post: 'Frontend Developer'
-        },
-        {
-            tag: 'Co-Founder',
-            teamImage: SHARJEEL,
-            post: 'Full-Stack Developer'
-        },
+            teamImage: SUBODH,
+            post: 'Navigation'
+        }
     ]
 
     return (
